@@ -9,7 +9,7 @@ st.title("Car Color Detection and People Counter")
 
 @st.cache_resource
 def load_models():
-    car_color_model = load_learner('car_color_model.pkl')
+    car_color_model = load_learner("car_color_model.pkl")
     person_detection_model = YOLO('yolov8n.pt')  # Ensure yolov8n.pt is in your directory or download at runtime
     return car_color_model, person_detection_model
 
