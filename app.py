@@ -5,15 +5,6 @@ from ultralytics import YOLO
 from PIL import Image, ImageDraw
 import tempfile
 
-os.system('apt-get update')
-os.system('apt-get install -y libgl1-mesa-glx')
-os.system('apt-get install -y libglib2.0-0')
-os.system('apt-get install -y libsm6')
-os.system('apt-get install -y libxext6')
-
-# Install opencv-python-headless for Streamlit Cloud (if you don't need GUI)
-os.system('pip install opencv-python-headless')
-
 # Load models
 st.title("Car Color Detection and People Counter")
 
