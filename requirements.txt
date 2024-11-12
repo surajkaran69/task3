@@ -1,6 +1,0 @@
-streamlit
-ultralytics==8.0.20
-opencv-python-headless==4.5.5.64
-numpy==1.21.6
-fastai
-Pillow
