@@ -5,3 +5,4 @@ opencv-contrib-python==4.10.0.84
 matplotlib==3.8.0
 matplotlib-inline==0.1.7
 pillow==10.4.0
+fastai==2.7.18
