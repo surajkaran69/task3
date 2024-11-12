@@ -1,4 +1,3 @@
-import os
 import streamlit as st
 from fastai.vision.all import load_learner, PILImage
 from ultralytics import YOLO
@@ -11,7 +10,7 @@ st.title("Car Color Detection and People Counter")
 @st.cache_resource
 def load_models():
     car_color_model = load_learner('car_color_model.pkl')
-    person_detection_model = YOLO('yolov8n.pt')  # Make sure yolov8n.pt is in your directory or download at runtime
+    person_detection_model = YOLO('yolov8n.pt')  # Ensure yolov8n.pt is in your directory or download at runtime
     return car_color_model, person_detection_model
 
 car_color_model, person_detection_model = load_models()
@@ -37,8 +36,8 @@ if uploaded_file is not None:
     car_box_color = "red" if car_pred == "blue" else "blue"
     draw.rectangle([(10, 10), (img.width - 10, img.height - 10)], outline=car_box_color, width=5)
     
-    # People detection
-    results = person_detection_model(img_path)
+    # People detection (pass the image object to YOLO, not the file path)
+    results = person_detection_model(img)  # Pass img directly, not img_path
     people_count = sum([1 for result in results[0].boxes if result.cls == 0])  # Class 0 is "person" in YOLO's COCO dataset
     
     # Display results
