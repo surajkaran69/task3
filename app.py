@@ -1,8 +1,16 @@
+import os
 import streamlit as st
 from fastai.vision.all import load_learner, PILImage
 from ultralytics import YOLO
 from PIL import Image, ImageDraw
 import tempfile
+
+# Install required system libraries
+os.system('apt-get update')
+os.system('apt-get install -y libgl1-mesa-glx')
+
+# Install opencv-python-headless for Streamlit Cloud (if you don't need GUI)
+os.system('pip install opencv-python-headless')
 
 # Load models
 st.title("Car Color Detection and People Counter")
