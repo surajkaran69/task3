@@ -1,4 +1,5 @@
 streamlit
 fastai
 ultralytics
+opencv-python
 Pillow
